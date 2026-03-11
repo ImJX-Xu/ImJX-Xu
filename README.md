@@ -1,16 +1,107 @@
-## Hi there 👋
+👋 你好，我是 [ImJX-Xu]
 
-<!--
-**ImJX-Xu/ImJX-Xu** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+我是一名控制科学与工程专业硕士研究生，专注于强化学习、行为克隆与复杂系统建模方向的研究与实践。以下是我在科研与个人学习中的项目成果，欢迎交流探讨~
 
-Here are some ideas to get you started:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+📂 项目总览
+
+🔬 组内项目（源码暂不公开）
+
+受课题组要求，以下两个项目的源码暂不对外公开，欢迎就技术方案与研究思路进行非代码相关的交流。
+
+1. Petri网时间与守卫模拟器
+
+- 项目定位：受CPN IDE启发，基于Python/PyQt5开发的图形化Petri网模拟器，服务于Petri网决策控制一体化相关研究。
+
+- 核心能力：
+
+  - 支持PNML文件加载，实现带8种常用延时分布（常数、正态、指数、Weibull等）的时间扩展Petri网
+
+  - 实现基于库所Token数量的守卫（Guard）条件控制，支持多条件的与/或逻辑运算
+
+  - 提供网结构自动布局可视化、交互式步进/自动仿真、变迁触发统计、令牌路径与延时分析全流程功能
+
+- 核心依赖：Python、PyQt5、pm4py、matplotlib、networkx、numpy
+
+2. FlightSim 高速飞行器集群制导控制仿真系统
+
+- 项目定位：面向高速无动力滑翔飞行器的全流程制导控制算法仿真验算平台，覆盖从场景配置到参数优化的完整算法验证链路。
+
+- 核心能力：
+
+  - 构建地球坐标系下3自由度6状态高保真动力学模型，采用RK4四阶龙格-库塔高精度数值积分，支持动力学模型插拔式替换
+
+  - 内置A*避障、手动航点等多路径规划算法，实现初始下降-准平衡滑翔（QEGC）-末段LOS俯冲三阶段自适应制导律
+
+  - 集成多变量遗传算法、单变量黄金分割算法的参数优化器，支持热流、动压、过载等多物理约束的统一管控与实时检查
+
+  - 提供全量仿真数据记录、基于Cartopy的地球投影轨迹可视化、标准化仿真报告生成能力
+
+- 核心依赖：Python、Cartopy、numpy、scipy、matplotlib
+
+
+---
+🌱 个人项目
+
+1. COD_Behavioural_Cloning：基于LSTM的游戏行为克隆智能体
+
+- 项目定位：基于IEEE CoG 2022优秀论文方案重构，适配游戏场景的行为克隆（Behavioral Cloning）智能体，实现从视觉感知到动作决策的端到端学习。
+
+- 核心能力：
+
+  - 构建高效的游戏数据采集管线：实时捕获屏幕画面、同步键鼠操作，以HDF5格式高效存储专家演示数据
+
+  - 基于PyTorch实现轻量化网络架构：EfficientNetB0视觉特征提取 + ConvLSTM2D + LSTM时序建模，精准学习游戏操作规律
+
+  - 提供完整训练与部署流程：包含数据预处理、模型训练、离线效果评估、实时键鼠控制推理，支持热键启停与调试
+
+  - 配套数据质量检测、鼠标动作区间推荐等工具，降低算法落地门槛
+
+- 核心依赖：Python、PyTorch、mss、pynput、pyautogui、HDF5
+
+- 项目仓库：https://github.com/ImJX-Xu/COD_Behavioural_Cloning
+
+2. TradeGame-RL：风物千程-强化学习贸易决策游戏
+
+- 项目定位：以90年代中国为背景的贸易经营模拟游戏，同时是一个典型的长程稀疏奖励强化学习基准环境，聚焦解决复杂规则下的长程决策问题。
+
+- 核心能力：
+
+  - 还原真实贸易玩法：跨城商品购销、运输调度、资金借贷、运力管理，核心目标是在有限周期内实现资产最大化
+
+  - 严格遵循Gymnasium规范封装强化学习环境，内置动作掩码机制，智能过滤非法操作，减少无效探索
+
+  - 支持混合训练方案：结合Stable-Baselines3的MaskablePPO算法与行为克隆（BC）预热，有效解决长程任务冷启动难题
+
+  - 提供Arcade图形交互界面，支持人类游玩演示录制、模型训练效果可视化，便于算法迭代与效果验证
+
+- 核心依赖：Python、Arcade、Stable-Baselines3、Gymnasium、PyTorch、numpy
+
+- 项目仓库：https://github.com/ImJX-Xu/TradeGame-RL
+
+
+---
+🛠️ 技术栈与技能
+
+- 核心编程语言：Python
+
+- 机器学习/强化学习：PyTorch、Stable-Baselines3、Gymnasium、强化学习算法设计、行为克隆
+
+- 系统建模与仿真：Petri网、飞行器动力学建模与数值积分、路径规划、制导控制算法
+
+- 可视化与开发：PyQt5、Arcade、matplotlib、Cartopy、networkx
+
+- 数据处理与工具：NumPy、SciPy、HDF5、Git
+
+
+---
+📫 联系我
+
+- GitHub主页：https://github.com/ImJX-Xu
+
+- 邮箱：415141819@qq.com
+
+
+---
+注：「Petri网时间与守卫模拟器」与「FlightSim」因课题组要求暂未开源，若您对相关技术方案感兴趣，欢迎通过上述方式联系我交流探讨。个人开源项目代码完全开放，欢迎Star与Fork~
